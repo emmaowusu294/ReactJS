@@ -1,0 +1,21 @@
+.productContainer {
+    padding: 20px;
+    border: 2px solid red;
+    margin-bottom: 10px;
+}
+
+.buttonStyle{
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+}
+
+.buttonStyle:active {
+    color: rgb(158, 85, 55);
+}
+
+.productTitle {
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(139, 70, 43);
+}

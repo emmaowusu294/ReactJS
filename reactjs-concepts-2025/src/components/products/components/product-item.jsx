@@ -1,12 +1,14 @@
+import styles from './product-item.module.css';
 
 function ButtonComponent () {
-    return <button>Click</button>;
+    console.log(styles);
+    return <button className={styles.buttonStyle}>Click</button>;
 }
 
 function ProductItem ({singleProductItem, key}) {
     return (
-        <div>
-            <p>{singleProductItem}</p>
+        <div className= {styles.productContainer}>
+            <p className= {styles.productTitle}>{singleProductItem}</p>
             <ButtonComponent />
         </div>
     );

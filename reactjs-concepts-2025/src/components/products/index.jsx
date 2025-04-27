@@ -1,4 +1,5 @@
 import ProductItem from "./components/product-item";
+import './style.css';
 
 
 
@@ -8,7 +9,7 @@ function ProductList({name, city, listOfProducts}) {
     // const {name, city} = props;
     return (
         <div>
-            <h3>ECommerce Project</h3>
+            <h3 className="title">ECommerce Project</h3>
             {/* <ProductItem /> */}
             <h4>Name is {name}, he is from {city}</h4>
 
