@@ -10,10 +10,10 @@ function App() {
   return (
     <div>
       <h1>Reacts JS Concepts</h1>
-      {/* <ClassBasedComponent />
-      <FunctionalComponent /> */}
+      <ClassBasedComponent />
+      {/* <FunctionalComponent /> */}
 
-      <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' />
+      {/* <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' /> */}
     </div>
     
   )
