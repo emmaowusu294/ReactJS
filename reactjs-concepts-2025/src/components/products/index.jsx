@@ -1,17 +1,20 @@
 import ProductItem from "./components/product-item";
 
 
-const dummyProductData = ['Product 1', 'Product 2', 'Product 3'];
 
-function ProductList() {
+
+function ProductList({name, city, listOfProducts}) {
+
+    // const {name, city} = props;
     return (
         <div>
             <h3>ECommerce Project</h3>
             {/* <ProductItem /> */}
+            <h4>Name is {name}, he is from {city}</h4>
 
             <ul>
                 {
-                    dummyProductData.map((item, index) => (
+                    listOfProducts.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))
                 }
