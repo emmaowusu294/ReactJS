@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import classes from './styles.module.css';
 import TodoItem from './components/todo-item';
+import TodoDetails from './components/todo-details';
+import { Skeleton } from '@mui/material';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -34,10 +36,18 @@ function App() {
     console.log(getCurrentTodoId);
 
     try {
+      
       const apiResponse = await fetch(
         `https://dummyjson.com/todos/${getCurrentTodoId}`
       );
-      const result = await apiResponse.json();
+      const details = await apiResponse.json();
+      if (details) {
+        setTodoDetails(details);
+        setOpenDialog(true);
+      } else {
+        setTodoDetails(null);
+        setOpenDialog(false);
+      }
       console.log(result);
     } catch (error) {
       console.log(error);
@@ -47,6 +57,9 @@ function App() {
   useEffect(() => {
     fetchListOfTodos();
   }, []);
+
+  if(loading) return <Skeleton variant="rounded" width={250} height={150} animation="wave" />
+
 
   return (
     <div className={classes.mainWrapper}>
@@ -61,6 +74,12 @@ function App() {
             ))
           : null}
       </div>
+      <TodoDetails
+        openDialog={openDialog}
+        todoDetails={todoDetails}
+        setOpenDialog={setOpenDialog}
+        setTodoDetails={setTodoDetails}
+      />
     </div>
   );
 }
