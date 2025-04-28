@@ -1,0 +1,33 @@
+.headerTitle {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.mainWrapper {
+  padding: 50px;
+}
+
+.todoListWrapper {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* phones */
+@media (max-width: 600px) {
+    .mainWrapper{
+        padding: 25px;
+    }
+  .todoListWrapper {
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* //tablet */
+@media (min-width: 601px) and (max-width: 992px) {
+    .todoListWrapper {
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
