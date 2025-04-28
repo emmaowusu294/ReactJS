@@ -4,6 +4,7 @@ import ContextButtonComponent from './components/context-context/button';
 import ContextTextComponent from './components/context-context/text';
 import FunctionalComponent from './components/functional-component';
 import ProductList from './components/products';
+import UseReducerExample from './components/use-reducer-example';
 import Users from './components/users';
 
 const dummyProductData = ['Product 1', 'Product 2', 'Product 3'];
@@ -17,8 +18,9 @@ function App() {
 
       {/* <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' /> */}
       {/* <Users /> */}
-      <ContextButtonComponent />
-      <ContextTextComponent />
+      {/* <ContextButtonComponent />
+      <ContextTextComponent /> */}
+      <UseReducerExample />
     </div>
   );
 }
