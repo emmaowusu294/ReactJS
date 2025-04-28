@@ -24,7 +24,7 @@ class ClassBasedComponent extends Component {
 
   //componentDidMount--first thing to be done on page load
   //componentDidUpdate--Called immediately after updating occurs. Not called for the initial render.
-  //componentWillUnmount
+  //componentWillUnmount-Called immediately before a component is destroyed.
 
   componentDidMount() {
     console.log('this is the first time on page load');
@@ -57,6 +57,10 @@ class ClassBasedComponent extends Component {
     }
   }
 
+  componentWillUnmount() {
+    console.log('component will unmount');
+  }
+
   render() {
     // console.log(this.state);
 
@@ -68,7 +72,7 @@ class ClassBasedComponent extends Component {
         {showText ? (
           <h3>Class Based Components</h3>
         ) : (
-          <h3 style={{ color: changeColor ? "black" : "red" }}>
+          <h3 style={{ color: changeColor ? 'black' : 'red' }}>
             Changed Text and Colour
           </h3>
         )}
@@ -77,17 +81,15 @@ class ClassBasedComponent extends Component {
         <button onClick={this.handleCount}>Increse Count Value</button>
         <h3
           style={{
-            color: changeCountStyle ? "red" : "white",
-            fontSize: changeCountStyle ? "30px" : "16px",
+            color: changeCountStyle ? 'red' : 'white',
+            fontSize: changeCountStyle ? '30px' : '16px',
           }}
         >
           Count is {count}
         </h3>
       </div>
     );
-    
   }
-  
 }
 
 export default ClassBasedComponent;
