@@ -1,5 +1,7 @@
 import './App.css';
 import ClassBasedComponent from './components/class-based-components';
+import ContextButtonComponent from './components/context-context/button';
+import ContextTextComponent from './components/context-context/text';
 import FunctionalComponent from './components/functional-component';
 import ProductList from './components/products';
 import Users from './components/users';
@@ -14,7 +16,9 @@ function App() {
       {/* <FunctionalComponent /> */}
 
       {/* <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' /> */}
-      <Users />
+      {/* <Users /> */}
+      <ContextButtonComponent />
+      <ContextTextComponent />
     </div>
   );
 }
