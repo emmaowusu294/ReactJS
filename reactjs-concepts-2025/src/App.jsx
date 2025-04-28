@@ -2,6 +2,7 @@ import './App.css';
 import ClassBasedComponent from './components/class-based-components';
 import FunctionalComponent from './components/functional-component';
 import ProductList from './components/products';
+import Users from './components/users';
 
 const dummyProductData = ['Product 1', 'Product 2', 'Product 3'];
 
@@ -12,7 +13,8 @@ function App() {
       {/* <ClassBasedComponent /> */}
       {/* <FunctionalComponent /> */}
 
-      <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' />
+      {/* <ProductList listOfProducts = {dummyProductData} name = '4Ts' city = 'Kumasi' /> */}
+      <Users />
     </div>
   );
 }
