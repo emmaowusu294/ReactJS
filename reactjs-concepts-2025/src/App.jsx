@@ -4,7 +4,9 @@ import ContextButtonComponent from './components/context-context/button';
 import ContextTextComponent from './components/context-context/text';
 import FormComponent from './components/form';
 import FunctionalComponent from './components/functional-component';
+import LoginComponent from './components/login';
 import ProductList from './components/products';
+import RegisterComponent from './components/register';
 import UseReducerExample from './components/use-reducer-example';
 import Users from './components/users';
 
@@ -22,7 +24,11 @@ function App() {
       {/* <ContextButtonComponent />
       <ContextTextComponent /> */}
       {/* <UseReducerExample /> */}
-      <FormComponent />
+      {/* <FormComponent /> */}
+      <div style={{display: 'flex', gap: '20px'}}>
+        <LoginComponent />
+        <RegisterComponent />
+      </div>
     </div>
   );
 }
