@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #d4a4a4;
+  }
+  
+  .nav {
+    margin-top: 2rem;
+  }
+  
+  .link {
+    margin: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  

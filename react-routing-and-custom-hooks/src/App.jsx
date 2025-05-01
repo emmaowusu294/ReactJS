@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useRoutes } from "react-router-dom";
+import "./App.css";
+import HomePage from "./pages/home-page";
+import CommentsListPage from "./pages/comments-list";
+import RecipeListPage from "./pages/recipe-list";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Rename to PascalCase (Capital first letter)
+function CustomRoutes() {
+  const element = useRoutes([
+    {
+      path: "/",
+      element: <HomePage />, // 👈 show HomePage at /
+    },{
+      path: "recipe-list",
+      element: <RecipeListPage />,
+    },
+    {
+      path: "comments-list",
+      element: <CommentsListPage />,
+    },
+  ]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return element;
 }
 
-export default App
+function App() {
+  return (
+    <div>
+      {/* Routes will be rendered here */}
+      <CustomRoutes />
+    </div>
+  );
+}
+
+export default App;
