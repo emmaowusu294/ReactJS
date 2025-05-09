@@ -37,7 +37,7 @@ function ShoppingCartProvider({ children }) {
 
 
   return (
-    <ShoppingCartContext.Provider value={{listOfProducts}}>
+    <ShoppingCartContext.Provider value={{listOfProducts, loading}}>
       {children}
     </ShoppingCartContext.Provider>
   );
