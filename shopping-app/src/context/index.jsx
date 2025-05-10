@@ -1,8 +1,3 @@
-//create the context
-//provide the state to the context
-//wrap context in root element
-//consume using use context
-
 import { createContext, useEffect, useState } from "react";
 import products from "../backend/products.json";
 
@@ -11,33 +6,52 @@ export const ShoppingCartContext = createContext(null);
 function ShoppingCartProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [listOfProducts, setListOfProducts] = useState([]);
+  const [productDetails, setProductDetails] = useState({});
 
   async function fetchListOfProducts() {
-    setTimeout(async () => {
+    setTimeout(() => {
       try {
-        //   const response = products;
-        //   const data = await response.json();
         setListOfProducts(products);
         setLoading(false);
-        console.log(listOfProducts);
-        
-        
       } catch (error) {
         console.error("Failed to load products:", error);
         setLoading(false);
       }
-    }, 2000); // Simulate a 2-second delay
+    }, 1000); // Simulate a delay
+  }
+
+  // ✅ Updated fetchCurrentProduct to wait for the list to load
+  function fetchCurrentProduct(getProductId) {
+    setLoading(true);
+    if (listOfProducts.length > 0) {
+      const foundProduct = listOfProducts.find(
+        (product) => product.id === getProductId
+      );
+      if (foundProduct) {
+        // console.log("🔍 Found product:", foundProduct);
+        setProductDetails(foundProduct);
+        setLoading(false);
+      } else {
+        console.warn("⚠️ Product not found!");
+      }
+    }
   }
 
   useEffect(() => {
     fetchListOfProducts();
-    // console.log(products);
   }, []);
 
-
-
   return (
-    <ShoppingCartContext.Provider value={{listOfProducts, loading}}>
+    <ShoppingCartContext.Provider
+      value={{
+        listOfProducts,
+        loading,
+        setLoading,
+        productDetails,
+        setProductDetails,
+        fetchCurrentProduct,
+      }}
+    >
       {children}
     </ShoppingCartContext.Provider>
   );
