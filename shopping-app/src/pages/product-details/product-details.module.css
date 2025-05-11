@@ -1,7 +1,7 @@
 .detailsCont {
   padding: 24px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .detailsFlex {
@@ -32,4 +32,48 @@
 
 .image:hover {
   scale: 1.1;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.priceAndButt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  color: rgb(250, 247, 247);
+  height: 40px;
+}
+
+.button:disabled{
+  opacity: 0.35;
+}
+
+.ratingCont {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  /* justify-content: space-evenly; */
+  /* background-color: red; */
+}
+
+.rating {
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+}
+
+.rating img {
+  height: 20px;
+}
+
+.ratingCont p,
+span {
+  font-weight: bold;
 }
